@@ -1,0 +1,1 @@
+CREATE DATABASE exchange_bot_development;
