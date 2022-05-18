@@ -1,14 +1,19 @@
 import * as dotenv from 'dotenv';
+import { Dialect, Options } from 'sequelize';
 import { IDatabaseConfig } from './database.types';
 
 dotenv.config();
 
-export const defaultOptions = {
+export const defaultOptions: Partial<Options> = {
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  dialect: process.env.DB_DIALECT,
+  port: process.env.DB_PORT as any,
+  dialect: process.env.DB_DIALECT as Dialect,
+  define: {
+    timestamps: true,
+    underscored: true,
+  },
 };
 
 export const databaseConfig: IDatabaseConfig = {

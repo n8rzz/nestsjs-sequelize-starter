@@ -1,4 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
+import { Retailer } from '../domain/retailers/entities/retailer.entity';
 import { databaseConfig } from './database.constants';
 
 export const databaseProviders = [
@@ -10,7 +11,7 @@ export const databaseProviders = [
 
       const sequelize = new Sequelize(config);
 
-      sequelize.addModels([]);
+      sequelize.addModels([Retailer]);
 
       return sequelize;
     },
