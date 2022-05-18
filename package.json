@@ -25,13 +25,15 @@
     "db:migrate:undo": "sequelize db:migrate:undo",
     "db:migrate:generate": "sequelize-cli migration:generate",
     "db:seed:generate": "sequelize-cli seed:generate",
-    "db:seed": "sequelize-cli db:seed:all"
+    "db:seed": "sequelize-cli db:seed:all",
+    "db:reset": "yarn db:drop && yarn db:create && yarn db:migrate && yarn db:seed"
   },
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "@nestjs/common": "^8.0.0",
     "@nestjs/config": "^2.0.0",
     "@nestjs/core": "^8.0.0",
+    "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/sequelize": "^8.0.0",
     "@types/hapi__joi": "^17.1.8",

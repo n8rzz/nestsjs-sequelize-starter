@@ -3,15 +3,15 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      'Retailers',
+      'retailers',
       [
         {
-          retailerName: 'Circuit City',
-          isActive: false,
+          retailer_name: 'Circuit City',
+          is_archived: true,
         },
         {
-          retailerName: 'Best Buy',
-          isActive: true,
+          retailer_name: 'Best Buy',
+          is_archived: false,
         },
       ],
       {},
@@ -19,6 +19,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('Retailers', null, {});
+    await queryInterface.bulkDelete('retailers', null, {});
   },
 };
